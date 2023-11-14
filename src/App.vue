@@ -8,7 +8,7 @@
 
 <template>
   <main>
-    <h1>{{ TWA.query_id }}</h1>
+    <h1>{{ TWA.initDataUnsafe.query_id }}</h1>
     <button @click="count++">You clicked me {{  count }} times.</button>
     <p><select>
       <option v-for="i in vals" :key="i" :value="i">{{ i + " value " + count}}</option>
