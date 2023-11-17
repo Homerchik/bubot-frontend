@@ -1,27 +1,33 @@
 <script setup>
-  import { ref } from 'vue'
+  import 'primevue/resources/themes/lara-light-indigo/theme.css'
+  import InputNumber from 'primevue/inputnumber';
+  import WalletPicker from './assets/WalletPicker.vue'
+  import CurrencyPicker from './assets/CurrencyPicker.vue'
+  import CategoryPicker from './assets/CategoryPicker.vue'
+  import Button from 'primevue/button';
+  import Textarea from 'primevue/textarea';
+  import SelectButton from 'primevue/selectbutton';
 
-  const count = ref(0)
-  const vals = new Array(1,2,3,4)
+
+  import { ref } from 'vue'
+  const amount=ref()
+  const ftType=ref()
 
 </script>
 
-<template>
-  <main>
-    <h1>{{ TWA.initDataUnsafe.user }}</h1>
-    <button @click="count++">You clicked me {{  count }} times.</button>
-    <p><select>
-      <option v-for="i in vals" :key="i" :value="i">{{ i + " value " + count}}</option>
-    </select></p>
-  </main>
+<template class="form">
+  <WalletPicker/>
+  <SelectButton v-model="ftType" :options="['Funding', 'Withdrawal']" aria-labelledby="custom" />
+  <p>
+    <InputNumber v-model="amount" placeholder="Enter amount" :minFractionDigits="0" :maxFractionDigits="2"/>
+    <CurrencyPicker/>
+  </p>
+  <CategoryPicker/>
+  <span class="p-float-label">
+    <Textarea v-model="value" rows="5" cols="30" />
+    <label>Commentary</label>
+  </span>
+  <Button label="Add" />    
+  <h1>{{ TWA.initDataUnsafe.user }}</h1>
+
 </template>
-
-<style>
-  button {
-    background-color: aquamarine;
-  }
-
-  main {
-    text-align: center;
-  }
-</style>
