@@ -16,18 +16,18 @@
 </script>
 
 <template class="form">
-  <WalletPicker/>
-  <SelectButton v-model="ftType" :options="['Funding', 'Withdrawal']" aria-labelledby="custom" />
+  <WalletPicker style="width: 360px; "/>
+  <SelectButton v-model="ftType" :options="['Funding', 'Withdrawal']" aria-labelledby="custom" style="padding-top:25px; padding-bottom:10px;"/>
   <p>
-    <InputNumber v-model="amount" placeholder="Enter amount" :minFractionDigits="0" :maxFractionDigits="2"/>
-    <CurrencyPicker/>
+    <InputNumber v-model="amount" placeholder="Enter amount" :minFractionDigits="0" :maxFractionDigits="2" style="padding-bottom:10px; width:195px; margin-right:5px"/>
+    <CurrencyPicker style="margin-left: 10px; width: 150px;"/>
   </p>
-  <CategoryPicker/>
+  <CategoryPicker style="padding-bottom: 25px;"/>
   <span class="p-float-label">
     <Textarea v-model="value" rows="5" cols="30" />
     <label>Commentary</label>
   </span>
-  <Button label="Add" />    
+  <Button label="Add" style="margin-top:20px"/>    
   <h1>{{ TWA.initDataUnsafe.user }}</h1>
 
 </template>

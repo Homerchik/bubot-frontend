@@ -14,5 +14,5 @@ getCurrencies()
 </script>
 
 <template>
-    <Dropdown v-model="selected" :options="currencies" placeholder="Select currency" class="w-full md:w-14rem" />
+    <Dropdown v-model="selected" :options="currencies" placeholder="Currency" class="w-full md:w-14rem" />
 </template>
